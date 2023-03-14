@@ -10,6 +10,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import static br.com.erpsystem.mscliente.constants.RabbitMQConstants.CLIENTE_QUEUE;
+
 @RestController
 @Slf4j
 @RequestMapping("/api/v1/cliente")
