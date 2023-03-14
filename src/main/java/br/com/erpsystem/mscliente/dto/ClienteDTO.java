@@ -9,10 +9,9 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Data
-public class ClienteDTO {
-
+@Builder
+public class ClienteDTO{
     private UUID id;
     @JsonProperty("first_name")
     private String firstName;
@@ -22,4 +21,5 @@ public class ClienteDTO {
     private Date birthdate;
     @JsonProperty("cpf")
     private String cpf;
+
 }
