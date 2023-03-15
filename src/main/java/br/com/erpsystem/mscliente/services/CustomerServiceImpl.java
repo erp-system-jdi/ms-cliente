@@ -30,29 +30,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO findCustomerByCpf(String cpf) {
 
-//        log.info("CustomerServiceImpl.findCustomerByCpf - Start - Cpf Cliente: {}", cpf);
-//
-//        CustomerDTO customerDTO = mapper.clienteToClienteDTO(customerRepository.findCustomerByCpf(cpf));
-//
-//        if(customerDTO == null){
-//            log.error("CustomerServiceImpl.findCustomerByCpf - Error - Client Not Found");
-//            throw new CustomerNotFoundException("Client Not Found");
-//        }
-//
-//        log.info("CustomerServiceImpl.findCustomerByCpf - End");
-//        return customerDTO;
-//
-//    }
-
         CustomerDTO customerDTO = mapper.clienteToClienteDTO((customerRepository.findCustomerByCpf(cpf)
                 .orElseThrow(() -> {
-                        log.error("CustomerServiceImpl.findCustomerByCpf - Error - Client Not Found");
-                        throw new CustomerNotFoundException(BusinessExceptions.CUSTOMER_NOT_FOUND);
+                    log.error("CustomerServiceImpl.findCustomerByCpf - Error - Client Not Found");
+                    throw new CustomerNotFoundException(BusinessExceptions.CUSTOMER_NOT_FOUND);
                 })));
 
         log.info("CustomerServiceImpl.findCustomerByCpf - End");
         return customerDTO;
 
-        }
+    }
 
 }
