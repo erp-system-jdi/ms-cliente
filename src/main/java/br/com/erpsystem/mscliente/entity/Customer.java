@@ -38,7 +38,6 @@ public class Customer {
     private Date registerDate;
     @Column(name = "phone")
     private String phone;
-
     @OneToMany(mappedBy = "customer", cascade = CascadeType.PERSIST)
     private List<Address> addresses;
 

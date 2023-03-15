@@ -2,8 +2,10 @@ package br.com.erpsystem.mscliente.services;
 
 import br.com.erpsystem.mscliente.dto.CustomerDTO;
 import br.com.erpsystem.mscliente.entity.Customer;
+import br.com.erpsystem.mscliente.exceptions.CustomerNotFoundException;
 import br.com.erpsystem.mscliente.mapper.CustomerMapper;
 import br.com.erpsystem.mscliente.repository.CustomerRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -27,8 +29,16 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO buscarClientePorCpf(String cpf) {
         log.info("ClienteServiceImpl.salvarCliente - Start - Cpf Cliente: {}", cpf);
+
         CustomerDTO customerDTO = mapper.clienteToClienteDTO(customerRepository.findClienteByCpf(cpf));
+
+        if(customerDTO == null){
+            log.error("ClienteServiceImpl.salvarCliente - Error - Client Not Found");
+            throw new CustomerNotFoundException("Client Not Found");
+        }
+
         log.info("ClienteServiceImpl.salvarCliente - End - cliente: {}", customerDTO);
+
         return customerDTO;
     }
 }
