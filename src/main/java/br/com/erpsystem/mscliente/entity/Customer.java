@@ -5,9 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.UuidGenerator;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -15,7 +16,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity(name = "TB_01_CLIENTE")
 @Builder
-public class Cliente {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -25,9 +26,21 @@ public class Cliente {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
+    @Column(name = "full_name")
+    private String fullName;
     @Column(name = "birthdate")
     private Date birthdate;
     @Column(name = "cpf", unique = true)
     private String cpf;
+    @Column(name = "rg", nullable = false)
+    private String rg;
+    @Column(name = "register_date")
+    private Date registerDate;
+    @Column(name = "phone")
+    private String phone;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.PERSIST)
+    private List<Address> addresses;
+
 
 }
