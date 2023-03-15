@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.BatchSize;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,6 +33,8 @@ public class Customer {
     private Date birthdate;
     @Column(name = "cpf", unique = true)
     private String cpf;
+
+
     @Column(name = "rg", nullable = false)
     private String rg;
     @Column(name = "register_date")
