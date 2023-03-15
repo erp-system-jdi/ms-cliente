@@ -21,7 +21,7 @@ public class CustomerController {
     @GetMapping(value = "/{cpf}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CustomerDTO> buscarClientePorCpf(@PathVariable("cpf") String cpf){
         log.info("ClienteController.buscarClientePorCpf - Start - cpf: {}", cpf);
-        CustomerDTO customerDTO = customerService.buscarClientePorCpf(cpf);
+        CustomerDTO customerDTO = customerService.findCustomerByCpf(cpf);
         log.info("ClienteController.buscarClientePorCpf - End");
         return ResponseEntity.ok(customerDTO);
     }

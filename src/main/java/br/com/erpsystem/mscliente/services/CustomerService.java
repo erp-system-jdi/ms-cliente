@@ -7,5 +7,5 @@ public interface CustomerService {
 
     CustomerDTO salvarCliente(CustomerDTO customerDTO);
 
-    CustomerDTO buscarClientePorCpf(String cpf);
+    CustomerDTO findCustomerByCpf(String cpf);
 }
