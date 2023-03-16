@@ -1,8 +1,6 @@
 package br.com.erpsystem.mscliente.controllers;
 
-import br.com.erpsystem.mscliente.dto.CustomerDTO;
 import br.com.erpsystem.mscliente.dto.http.request.RegisterCostumerRequestDTO;
-import br.com.erpsystem.mscliente.dto.http.response.CustomerResponseDTO;
 import br.com.erpsystem.mscliente.dto.http.response.RegisterCostumerResponseDTO;
 import br.com.erpsystem.mscliente.services.CustomerService;
 import jakarta.validation.Valid;
