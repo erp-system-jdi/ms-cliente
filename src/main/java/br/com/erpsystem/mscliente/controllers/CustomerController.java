@@ -3,11 +3,13 @@ package br.com.erpsystem.mscliente.controllers;
 import br.com.erpsystem.mscliente.dto.CustomerDTO;
 import br.com.erpsystem.mscliente.dto.http.response.CustomerResponseDTO;
 import br.com.erpsystem.mscliente.services.CustomerService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -26,8 +28,8 @@ public class CustomerController {
         return ResponseEntity.ok(customerDTO);
     }
 
-    @PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CustomerResponseDTO> cadastrarCliente(@RequestBody CustomerDTO customerDTO){
+    @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<CustomerResponseDTO> cadastrarCliente(@Valid @RequestBody CustomerDTO customerDTO){
         log.info("ClienteController.cadastrarCliente - Start - clienteDTO: {}", customerDTO);
 
         CustomerResponseDTO customerResponseDTO = CustomerResponseDTO.builder()

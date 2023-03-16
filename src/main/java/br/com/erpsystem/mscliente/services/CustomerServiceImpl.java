@@ -11,6 +11,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -22,6 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO salvarCliente(CustomerDTO customerDTO) {
         log.info("ClienteServiceImpl.salvarCliente - Start - clienteDTO: {}", customerDTO);
+        customerDTO.setRegisterDate(LocalDateTime.now());
         Customer savedCustomer = customerRepository.save(mapper.clienteDtoToCliente(customerDTO));
         log.info("ClienteServiceImpl.salvarCliente - End - cliente: {}", savedCustomer);
         return mapper.clienteToClienteDTO(savedCustomer);

@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.BatchSize;
 
-import java.util.ArrayList;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -15,7 +15,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "TB_01_CLIENTE")
+@Entity(name = "TB_01_CUSTOMER")
 @Builder
 public class Customer {
 
@@ -30,18 +30,19 @@ public class Customer {
     @Column(name = "full_name")
     private String fullName;
     @Column(name = "birthdate")
-    private Date birthdate;
+    private Timestamp birthdate;
+    @Column(name = "email")
+    private String email;
     @Column(name = "cpf", unique = true)
     private String cpf;
-
-
     @Column(name = "rg", nullable = false)
     private String rg;
     @Column(name = "register_date")
-    private Date registerDate;
+    private Timestamp registerDate;
     @Column(name = "phone")
     private String phone;
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "customer_id")
     private List<Address> addresses;
 
 

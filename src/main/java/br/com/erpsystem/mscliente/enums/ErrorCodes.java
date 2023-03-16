@@ -13,7 +13,8 @@ public enum ErrorCodes {
     CUSTOMER_NOT_FOUND("Customer not found"),
     BAD_REQUEST("Bad Request"),
     MALFORMED_JSON("Malformed JSON"),
-    RESOURCE_NOT_FOUND("Resource not found");
+    RESOURCE_NOT_FOUND("Resource not found"),
+    INVALID_DATA("Invalid Data");
 
     private final String message;
 

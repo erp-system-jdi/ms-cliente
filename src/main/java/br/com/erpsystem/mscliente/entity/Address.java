@@ -12,7 +12,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "TB_02_ENDERECO")
+@Entity(name = "TB_02_ADDRESS")
 @Builder
 public class Address {
 
@@ -32,7 +32,6 @@ public class Address {
     private String city;
     @Column(name = "state")
     private String state;
-    @ManyToOne
-    private Customer customer;
+
 
 }
