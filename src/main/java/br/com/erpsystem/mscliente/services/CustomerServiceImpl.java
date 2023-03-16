@@ -1,6 +1,8 @@
 package br.com.erpsystem.mscliente.services;
 
 import br.com.erpsystem.mscliente.dto.CustomerDTO;
+import br.com.erpsystem.mscliente.dto.http.request.RegisterCostumerRequestDTO;
+import br.com.erpsystem.mscliente.dto.http.response.RegisterCostumerResponseDTO;
 import br.com.erpsystem.mscliente.entity.Customer;
 import br.com.erpsystem.mscliente.exceptions.BusinessExceptions;
 import br.com.erpsystem.mscliente.exceptions.CustomerNotFoundException;
@@ -23,21 +25,22 @@ public class CustomerServiceImpl implements CustomerService {
     private final CustomerMapper mapper;
 
     @Override
-    public CustomerDTO saveCustomer(CustomerDTO customerDTO) {
-        if(verifyCustomerExists(customerDTO.getCpf())){
+    public RegisterCostumerResponseDTO saveCustomer(RegisterCostumerRequestDTO registerCostumerRequestDTO) {
+        if(verifyCustomerExists(registerCostumerRequestDTO.getCustomerDTO().getCpf())){
             throw new DuplicatedCpfException("This CPF already exists in the database!");
         } else {
-            log.info("CustomerServiceImpl.saveCustomer - Start - customerDTO: {}", customerDTO);
-            customerDTO.setRegisterDate(LocalDateTime.now());
-            Customer savedCustomer = customerRepository.save(mapper.customerDtoToCustomer(customerDTO));
+            log.info("CustomerServiceImpl.saveCustomer - Start - registerCostumerRequestDTO: {}", registerCostumerRequestDTO);
+            registerCostumerRequestDTO.getCustomerDTO().setRegisterDate(LocalDateTime.now());
+            Customer savedCustomer = customerRepository.save(mapper.customerDtoToCustomer(registerCostumerRequestDTO.getCustomerDTO()));
             log.info("CustomerServiceImpl.saveCustomer - End - customer: {}", savedCustomer);
-            return mapper.customerToCustomerDTO(savedCustomer);
+            return RegisterCostumerResponseDTO.builder()
+                    .costumerDTO(mapper.customerToCustomerDTO(savedCustomer)).build();
 
         }
     }
 
     @Override
-    public CustomerDTO findCustomerByCpf(String cpf) {
+    public RegisterCostumerResponseDTO findCustomerByCpf(String cpf) {
 
         CustomerDTO customerDTO = mapper.customerToCustomerDTO((customerRepository.findCustomerByCpf(cpf)
                 .orElseThrow(() -> {
@@ -46,7 +49,7 @@ public class CustomerServiceImpl implements CustomerService {
                 })));
 
         log.info("CustomerServiceImpl.findCustomerByCpf - End");
-        return customerDTO;
+        return registerCostumerResponseBuilder(customerDTO);
 
     }
 
@@ -59,6 +62,12 @@ public class CustomerServiceImpl implements CustomerService {
         } else{
             return false;
         }
+    }
+
+    private RegisterCostumerResponseDTO registerCostumerResponseBuilder(CustomerDTO customerDTO){
+        return RegisterCostumerResponseDTO.builder()
+                .costumerDTO(customerDTO)
+                .build();
     }
 
 }
