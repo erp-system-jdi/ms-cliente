@@ -3,7 +3,6 @@ package br.com.erpsystem.mscliente.mapper;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 

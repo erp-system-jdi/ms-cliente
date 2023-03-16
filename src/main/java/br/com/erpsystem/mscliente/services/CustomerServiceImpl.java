@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public RegisterCostumerResponseDTO saveCustomer(RegisterCostumerRequestDTO registerCostumerRequestDTO) {
-        if(verifyCustomerExists(registerCostumerRequestDTO.getCustomerDTO().getCpf())){
+        if(verifyCustomerExists(registerCostumerRequestDTO)){
             throw new DuplicatedCpfException("This CPF already exists in the database!");
         } else {
             log.info("CustomerServiceImpl.saveCustomer - Start - registerCostumerRequestDTO: {}", registerCostumerRequestDTO);
@@ -53,15 +53,8 @@ public class CustomerServiceImpl implements CustomerService {
 
     }
 
-    private boolean verifyCustomerExists(String cpf){
-
-        Optional<Customer> customer = customerRepository.findCustomerByCpf(cpf);
-
-        if(customer.isPresent()){
-            return true;
-        } else{
-            return false;
-        }
+    private boolean verifyCustomerExists(RegisterCostumerRequestDTO registerCostumerRequestDTO){
+        return customerRepository.findCustomerByCpf(registerCostumerRequestDTO.getCustomerDTO().getCpf()).isPresent();
     }
 
     private RegisterCostumerResponseDTO registerCostumerResponseBuilder(CustomerDTO customerDTO){
