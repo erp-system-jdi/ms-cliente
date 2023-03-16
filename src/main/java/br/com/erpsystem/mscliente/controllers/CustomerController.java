@@ -25,19 +25,19 @@ public class CustomerController {
     public ResponseEntity<RegisterCostumerResponseDTO> searchCustomerByCpf(@PathVariable("cpf") String cpf){
         log.info("CustomerController.searchCustomerByCpf - Start - cpf: {}", cpf);
         RegisterCostumerResponseDTO registerCostumerResponseDTO = customerService.findCustomerByCpf(cpf);
-        log.info("ClienteController.buscarClientePorCpf - End");
+        log.info("CustomerController.searchCustomerByCpf - End");
         return ResponseEntity.ok(registerCostumerResponseDTO);
     }
 
 
     @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<RegisterCostumerResponseDTO> registerCustomer(@Valid @RequestBody RegisterCostumerRequestDTO registerCostumerRequestDTO){
-        log.info("CustomerController.cadastrarCliente - Start - registerCustomerRequestDTO: {}", registerCostumerRequestDTO);
+        log.info("CustomerController.registerCustomer - Start - registerCustomerRequestDTO: {}", registerCostumerRequestDTO);
 
         RegisterCostumerResponseDTO customerResponseDTO = RegisterCostumerResponseDTO.builder()
                 .costumerDTO(customerService.saveCustomer(registerCostumerRequestDTO).getCostumerDTO()).build();
 
-        log.info("ClienteController.cadastrarCliente - End");
+        log.info("CustomerController.registerCustomer - End");
 
         return ResponseEntity.status(HttpStatus.CREATED).body(customerResponseDTO);
     }
