@@ -11,6 +11,6 @@ import lombok.*;
 @Builder
 public class CustomerResponseDTO {
 
-    @JsonProperty("cliente")
+    @JsonProperty("customer")
     private CustomerDTO customerDTO;
 }

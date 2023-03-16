@@ -20,7 +20,7 @@ public class CustomerListener {
     public void listen(@Payload CustomerDTO customerDTO){
         log.info("ClienteListener.listen - Start - clienteDTO: {}", customerDTO);
 
-        customerService.salvarCliente(customerDTO);
+        customerService.saveCustomer(customerDTO);
 
         log.info("ClienteListener.listen - End");
     }

@@ -7,6 +7,6 @@ import org.mapstruct.Mapper;
 @Mapper(uses = {AddressMapper.class, DateMapper.class})
 public interface CustomerMapper {
 
-    Customer clienteDtoToCliente(CustomerDTO customerDTO);
-    CustomerDTO clienteToClienteDTO(Customer customer);
+    Customer customerDtoToCustomer(CustomerDTO customerDTO);
+    CustomerDTO customerToCustomerDTO(Customer customer);
 }

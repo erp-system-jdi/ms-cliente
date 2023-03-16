@@ -3,6 +3,7 @@ package br.com.erpsystem.mscliente.exceptions.handler;
 
 import br.com.erpsystem.mscliente.enums.ErrorCodes;
 import br.com.erpsystem.mscliente.exceptions.CustomerNotFoundException;
+import br.com.erpsystem.mscliente.exceptions.DuplicatedCpfException;
 import br.com.erpsystem.mscliente.exceptions.ExceptionResponse;
 import br.com.erpsystem.mscliente.exceptions.InvalidDataException;
 import lombok.extern.slf4j.Slf4j;
@@ -51,9 +52,16 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(InvalidDataException.class)
-    public final ResponseEntity<Object> handleCustomerInvalidData(InvalidDataException ex) {
-        log.error("RestExceptionHandler.handleCustomerInvalidData - Invalid data - error: [{}]", ex.getMessage(), ex);
+    public final ResponseEntity<Object> handleInvalidData(InvalidDataException ex) {
+        log.error("RestExceptionHandler.handleInvalidData - Invalid data - error: [{}]", ex.getMessage(), ex);
         ExceptionResponse exceptionResponse = new ExceptionResponse(ErrorCodes.INVALID_DATA, ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exceptionResponse);
+    }
+
+    @ExceptionHandler(DuplicatedCpfException.class)
+    public final ResponseEntity<Object> handleDuplicatedCpf(DuplicatedCpfException ex) {
+        log.error("RestExceptionHandler.handleDuplicatedCpf - Duplicated CPF - error: [{}]", ex.getMessage(), ex);
+        ExceptionResponse exceptionResponse = new ExceptionResponse(ErrorCodes.DUPLICATED_CPF, ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exceptionResponse);
     }
 }

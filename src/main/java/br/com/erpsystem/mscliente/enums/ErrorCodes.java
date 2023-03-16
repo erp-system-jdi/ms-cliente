@@ -14,7 +14,8 @@ public enum ErrorCodes {
     BAD_REQUEST("Bad Request"),
     MALFORMED_JSON("Malformed JSON"),
     RESOURCE_NOT_FOUND("Resource not found"),
-    INVALID_DATA("Invalid Data");
+    INVALID_DATA("Invalid Data"),
+    DUPLICATED_CPF("Duplicated CPF");
 
     private final String message;
 

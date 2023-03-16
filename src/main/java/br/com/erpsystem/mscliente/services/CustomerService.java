@@ -5,7 +5,7 @@ import br.com.erpsystem.mscliente.dto.CustomerDTO;
 
 public interface CustomerService {
 
-    CustomerDTO salvarCliente(CustomerDTO customerDTO);
+    CustomerDTO saveCustomer(CustomerDTO customerDTO);
 
     CustomerDTO findCustomerByCpf(String cpf);
 }
