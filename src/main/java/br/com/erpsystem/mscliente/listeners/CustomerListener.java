@@ -1,8 +1,8 @@
 package br.com.erpsystem.mscliente.listeners;
 
 import br.com.erpsystem.mscliente.constants.RabbitMQConstants;
-import br.com.erpsystem.mscliente.dto.ClienteDTO;
-import br.com.erpsystem.mscliente.services.ClienteService;
+import br.com.erpsystem.mscliente.dto.CustomerDTO;
+import br.com.erpsystem.mscliente.services.CustomerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -12,15 +12,15 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class ClienteListener {
+public class CustomerListener {
 
-    private final ClienteService clienteService;
+    private final CustomerService customerService;
 
     @RabbitListener(queues = RabbitMQConstants.CLIENTE_QUEUE)
-    public void listen(@Payload ClienteDTO clienteDTO){
-        log.info("ClienteListener.listen - Start - clienteDTO: {}", clienteDTO);
+    public void listen(@Payload CustomerDTO customerDTO){
+        log.info("ClienteListener.listen - Start - clienteDTO: {}", customerDTO);
 
-        clienteService.salvarCliente(clienteDTO);
+        customerService.saveCustomer(customerDTO);
 
         log.info("ClienteListener.listen - End");
     }

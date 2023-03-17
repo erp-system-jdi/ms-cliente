@@ -1,6 +1,6 @@
 package br.com.erpsystem.mscliente.dto.http.response;
 
-import br.com.erpsystem.mscliente.dto.ClienteDTO;
+import br.com.erpsystem.mscliente.dto.CustomerDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
@@ -9,8 +9,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ClienteResponseDTO {
+public class CustomerResponseDTO {
 
-    @JsonProperty("cliente")
-    private ClienteDTO clienteDTO;
+    @JsonProperty("customer")
+    private CustomerDTO customerDTO;
 }
