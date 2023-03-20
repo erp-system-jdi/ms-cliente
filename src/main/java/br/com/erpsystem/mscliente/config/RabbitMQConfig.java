@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
+
     @Bean
     public Queue clienteQueue(){
         return QueueBuilder.durable(RabbitMQConstants.CLIENTE_QUEUE).build();

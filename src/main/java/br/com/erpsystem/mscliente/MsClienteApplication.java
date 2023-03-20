@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-public class MsClienteApplication{
+public class MsClienteApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MsClienteApplication.class, args);
