@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers>
+        <server>
+            <id>erp-system-erp-maven-central-store</id>
+            <username>aws</username>
+            <password>eyJ2ZXIiOjEsImlzdSI6MTY3OTA1OTI1MiwiZW5jIjoiQTEyOEdDTSIsInRhZyI6IjkzYTVIWGQtbE1JV0ZTLXdNLXY1eGciLCJleHAiOjE2NzkxMDI0NTIsImFsZyI6IkExMjhHQ01LVyIsIml2IjoidFJGZGNlNERrRzdNYkVqYiJ9.HG2c9bogM0nyb_ehkz835w.NnDpxR6YrK-AKbCa.jN_Ush6fqdsXAurVIlcrVl_JKzcWM1nRfd4ATsINgjC_RPfUTzfnGxLCD6SzHs2An4BK8Y-aftAPIBdPt6s6yHi40SeRaKFkZhqnjj6HVcD__kUy6NIIFHufwxTuCBD6wqBbvfwfo2FZcT_i6px3Sr3SqMT46sCLSroYTIRFNAgziyyD4PpLITC5rsdkwuPsGmMiRseC1AmHXNoc9ZvYBKSA_G0YcTHu6y13tlsRED7e8VnvlNVWlCahSF2_XIWCar6cJt03Xv1-Aob71Dmck999kvHhkhDVU70ZghKdq8GskYpNZQl2wcnzLcwyta0rjAkvlSWi2XJ4j36T7h2mHCwj5WO82fwpoQqL1-f_biQUw0p-ynT1TsZv2ErEo4Zvf_W-GgO_MicQMgQBS19OGBanTH-Hjlwee5Mv29kYQ4FrqHyQ21BaAjMw_XPsaG87wrbvzNAdtE9M_54zczMInnwAiV29X4y7qFdh0e1dIqJwrShWpgmvqiF4f30DpY9SkW48CzsycRYwx1zLp30yagqb_7qHzByunzZ7HNk6sNVIhnzD_Ll8KfHALJkJPDLpsBwk8UFurWZUqPyI-qFUI-d5pJp4OpSy6JOtLSEvUh-35Wi1-CeDQvXpvK9PaUD5NkHY-x-w5f2Pa6FtOBG3WuplZoWKRnAsvMGlPEqZgEFdsVNoOpGZ2g-TKHK0fGDoMTkzbR6ZCNcFZanXgkiQFwwR2mw582d3gsKV6ErrUsVsW-Uk0Y71ODa4TV8o11rc07xypkXa45devdtvOm4PcswAN6WsvTvLt7hTLaHi3QkwgbYkCkstCHNtf7jrEjBPfL0grtMWbyrzMtY9mcYjQCbMjMInOWJhQuZ8JZ33n6Yb02OkgQMNnLeuwIYNoLWRDVxI9Q6yKeOgM5l-__WcDhztcjMopVFX697v0CRK4ePkjmZ40TzDgCjdIYy6c6mlzIGkO2tM61XoP8L24pxE-6cKgygHSQ3T7Isjo6cQ6TjJiGkh6-yyzHeiWj3J0SDoZuU1DfB0Ev4vdtdVwgBJ3NuJ8KUjgi8uWJmB1g1OAKj5zQwC0pptc00NkO3nJi-Is0k_2O1mXWTBbf8BzbVBx9JiKCTr-abq2xchGhNTaf4iE8wT5yYPpPyAyyZHmsHaa_2YvcZNEf7-eKxQQT4Vrj_Z4JSYpQHVTVbI0GVtbvUiqLmAk0iOjGEcQRYJv3XKo0B-PFz-YozxBJJY2H9AM6f5sBFe.NFD_T_UAX5mibe1-f-8ZNw
+</password>
+        </server>
+        <server>
+            <id>erp-system-erp-erp-system-jdi</id>
+            <username>aws</username>
+            <password>eyJ2ZXIiOjEsImlzdSI6MTY3OTA1OTI0NCwiZW5jIjoiQTEyOEdDTSIsInRhZyI6IlRhTi1TZDdEaFZBQ0lPQ25ETVZLaWciLCJleHAiOjE2NzkxMDI0NDQsImFsZyI6IkExMjhHQ01LVyIsIml2IjoiZS1ET3YtYmJoR21FbDFfayJ9.i3ArcT4BLD4XSbYYIW1nCw.AQhq1lEuJJsPss7n.AjVZi2E_acH6US7gnS1JKpHuMkjeXb7k_3EA2JS6lgA6bhjl0SVgEhEYMPTSwkzT7NEAEf4bF0cfwJp9kGlbln-0Fjr3wdAS2v7-lfJvtWJSXisnEE4PuzmFA1xhgsJ5WMsMnMBKQqIFje2vv7pmOw6MNNjK0MHGsKyDb_lsV3n-5lhfkUfNXPmy5cX9-TxHpFKPT4NtHcfAGgjIs9ePTrn9nGWbdSV8_SuFTy2cyUmeQFkdoLWa_nqQrIg1S-iMO8QKQknk7_Xkd8MO9SIl-uGqzJ_6p_YRQEOaAyzP5RIbDhXLOgTANlVmZa1XEMv0H7RJmnlHecJezWUYf9Kq4jmGxR0kYYogCKCX_d__n2LXwAkOFjSZH4ljoUxf0QGeewSG0fOwWRWGec3jOBdHFK5t0xVaBtZP8WyLF9pRXfId-ONJm6-PpFpxfaz8O_XvyOWjCkyWI5FjAFdpP4xzJ31SG3-GgIQgGuMOeA5Efd6p1SjJaTdcitZO7Yf_qMtFYiW_Spe3g7v8T4T27dpYEX01E2axDYyj3ywTqlEjCI-7-1BdhDOKkX5qkHf5M483vfQGWFTm0kEW4RXpN22JhwBgdb7kB5ify97GWwjJ5gkpfx9YPkeQRbeyaE07v2kwwHyWiZuJ_zGpav9jMN7Mj3O1OjPx6PEIOMNB59d-wFEEEIJFzLHiSwlm5yk4VE3QXY5heB5iXqes-XCjBXWDweooJT4VqeIeIG7ctEOEWoN-Op94K88LthVEw4uwZYysn3FvfwLzLmWzHfC7OQZrU6UuIQp54lKYWksTS-ohAEUgSAqf9li60znHqzcwLa1dO7oFSi9_QVVHMEG-x2kX3MG5s8LWNQPMR3AM4eX-lNZuWMfCrWTh7Sk-n-6dhs8HslYblJ8MtCWBXcAWYTfMcs-1WNelRoKJ3c1JtRiTQqrYdEZhyxIW9qtY2WtzZEnkQTmnbFWOcYQbQXKSNDQTImZnaKQ8fLn9_ocdKiwN5C5GNXpryDJyfp1ZSUSxYfZ8AdpD1047QGD2s_xyfQyeeAvTjztkkgAYcKCxttIYm-5EPnxJzPBV_jiar1kMkb-5LGrNnILo5qEu3GJc6rtbwQgjAeV0qUJCc07XDRlBpds9K7SuRn_xOpUhxvK5MdILskJntaOxTRja50zqLu2WmtThvbtXPuO5Y03-A-85g6gzw7t254rHhJXqelQ3P_yIIicLJOiAUrayomXXrrV52OKFiA.IK8eG4BCr60vC0DpzOOhJA
+</password>
+        </server>
+    </servers>
+
+    <profiles>
+        <profile>
+            <id>erp-system-erp-erp-system-jdi</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>erp-system-erp-erp-system-jdi</id>
+                    <url>
+                        https://erp-system-erp-034358726843.d.codeartifact.us-east-1.amazonaws.com/maven/erp-system-jdi/
+                    </url>
+                </repository>
+            </repositories>
+        </profile>
+        <profile>
+            <id>erp-system-erp-maven-central-store</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>erp-system-erp-maven-central-store</id>
+                    <url>
+                        https://erp-system-erp-034358726843.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/
+                    </url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+    <mirrors>
+        <mirror>
+            <id>erp-system-erp-maven-central-store</id>
+            <name>erp-system-erp-maven-central-store</name>
+            <url>https://erp-system-erp-034358726843.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/
+            </url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+        <mirror>
+            <id>erp-system-erp-erp-system-jdi</id>
+            <name>erp-system-erp-erp-system-jdi</name>
+            <url>https://erp-system-erp-034358726843.d.codeartifact.us-east-1.amazonaws.com/maven/erp-system-jdi/</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors>
+
+</settings>
