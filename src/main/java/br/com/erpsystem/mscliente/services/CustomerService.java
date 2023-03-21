@@ -2,10 +2,12 @@ package br.com.erpsystem.mscliente.services;
 
 
 import br.com.erpsystem.mscliente.dto.CustomerDTO;
+import br.com.erpsystem.mscliente.dto.http.request.RegisterCostumerRequestDTO;
+import br.com.erpsystem.mscliente.dto.http.response.RegisterCostumerResponseDTO;
 
 public interface CustomerService {
 
-    CustomerDTO saveCustomer(CustomerDTO customerDTO);
+    RegisterCostumerResponseDTO saveCustomer(RegisterCostumerRequestDTO registerCostumerRequestDTO);
 
-    CustomerDTO findCustomerByCpf(String cpf);
+    RegisterCostumerResponseDTO findCustomerByCpf(String cpf);
 }

@@ -15,9 +15,7 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping>
-          <factory-entry name="entityManagerFactory" />
-        </datasource-mapping>
+        <datasource-mapping />
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -108,6 +106,13 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-web:6.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:6.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:6.0.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-validation:3.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.5" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate.validator:hibernate-validator:8.0.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.validation:jakarta.validation-api:3.0.2" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework.boot:spring-boot-devtools:3.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:3.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-openfeign:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-context:4.0.1" level="project" />
