@@ -5,12 +5,17 @@
 	<parent>
 		<groupId>br.com.erp-system</groupId>
 		<artifactId>bom-erp-system-jdi</artifactId>
-		<version>0.0.2</version>
+		<version>0.0.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<artifactId>ms-cliente</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>ms-cliente</name>
+	<version>0.0.1</version>
+	<name>ms-customer</name>
+	<packaging>jar</packaging>
+	<build>
+		<finalName>ms-customer-${version}</finalName>
+	</build>
+
 	<description>Demo project for Spring Boot</description>
 
 </project>
