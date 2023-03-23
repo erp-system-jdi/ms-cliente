@@ -6,7 +6,7 @@
 		<groupId>br.com.erp-system</groupId>
 		<artifactId>bom-erp-system-jdi</artifactId>
 		<version>0.0.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath></relativePath>
 	</parent>
 	<artifactId>ms-cliente</artifactId>
 	<version>0.0.1</version>
