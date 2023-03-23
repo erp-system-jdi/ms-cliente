@@ -4,12 +4,12 @@
         <server>
             <id>erp-system-erp-maven-central-store</id>
             <username>aws</username>
-            <password>eyJ2ZXIiOjEsImlzdSI6MTY3OTUzNjMwMiwiZW5jIjoiQTEyOEdDTSIsInRhZyI6ImN6RlFhMm1UTkZvVHp3NG9aZDJuSVEiLCJleHAiOjE2Nzk1Nzk1MDIsImFsZyI6IkExMjhHQ01LVyIsIml2IjoiN1hqSVRuejJ6akFtRW90ZSJ9.zXsuF1g_lD3DGWUPPiqkzQ.ytTvZLZeDWMSRcrb.PnM0lu_1_GY5XpLEdl19n8FD-INZ7ezp62kUtSKaWXVLOxeDMvxZrmAvMXZv5S6WaY5XH_LE07aJiyhX70lNc-6iAxeUoZtAX_aqOC-K0tRIitbOW7mIASzVc2mRyzu8vz8GFoN0rLS4m-zFTpNocne_nPqv963oxyYd0sYNX89VJgZqRdppfLvJrJzjYpSn0AT57e5tPAUaboZZCKm3a8vTcPJ7jvekH9WvbDMfKys0jVQRddPDYlvZiktD3rn4tLL0EKzAP6iFUwYP4Bhm5OKSIm2zw6JO7eCZA6R65mCxPeqiwd3piVx_mQWHUpJI0KEv-Lv7lqf0aiJtlZ_MufO3flAbxzsmmkhmIU6Xe8Ai3_rTo4AYyPQ7vQDjrMHaw5c5zzgLm5VCKbiPVHEUwLu-zg5LiH9W5TAj51fX2xm7bpfsdaIZXt1SDQ1meQs9mKnK8Su3M36GYaZiByW5VTZZV5pLZ20ZhBXq5eEsQXsaywVUhORyYX2NBQ26mNldWcFY7Ai3zTlzeayUoaoij9HG154aX_VIoJ1FNsUL9W43wfx8SY0K4XUfwdkp4-cFYfc32-M86-j8VJx5xjmGeH4TmZT3CUKNTCh7Zs2WaLgsNZXfNqD9ZZDBiNi_p17p1qqyGxH52MUCQR--JXtCE_5ySj8dg-d6WBzwksquziFUG8L1W98QGQ_nzAErbyRWiBYkUnDvktxvnvlLhxfyc1uAlkOZQZAWcs1N3zZYlgSqzEg172ZLxWpBW39RsXppwHdQ91Ia5-F_OEpCemDQzYgTBRkIxzUYxkVxFgbsNDiE2OY8rT4GuogW2ysDw_dX-i5CsLDU0Bvjf8_ypHP4BVWFgFh2WAdmnXlGNFh4gYICQmew4h9JyxMEqHUoeYKPjrYYEPeYJHLc0K-rLGRJbuGsPJfTJGSlqU2MbN69xZm-5HEzEcXhcKppm_iOeMfIY5orc_lUorLfne6CQPJpCLSNoH4fsAfxA-uq3yNLAX5xtARY2hDrBzKDl7n2rGotD91ksQfwfJ31nSowhslWhp5zjaI8mViHClJFM0IMjndWrqi1jHGkbLhjGOWr7qi3IHQjlpL4Yuv6ooShPYKQR0mXjX10HLXb63s1SGIGDJL7wQfFGEzBxUIJhCsojl9filQMBh8I68oIQPW37IYqU14gg1XerrfKrmpgha_4IXWi5eE_jA71WuREa0FYS8jjed6jS6IJPXk-WlyjyxMV-_VEtwmXUiQugCTeF9jeU6rTlFbp0dNYyVaXVj9zz4BqhT3hqLyDJBG2ZuAfYEo1dW_cjAfC112_n9Jk5ub1CUUVhwxp9X5E6Xws8b4djkVL8ogDpEdLtu4ld1CbCPiCBsUlX1vHJ6r5HlkUvO6dWZ2W-0PQ_Ts2I-RarEQLsgmKly8i_3vJKe88RN8CQ1I.cKdy4mKLhFQrH5vCA-9wsg</password>
+            <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
         </server>
         <server>
             <id>erp-system-erp-erp-system-jdi</id>
             <username>aws</username>
-            <password>eyJ2ZXIiOjEsImlzdSI6MTY3OTUzNjMwMiwiZW5jIjoiQTEyOEdDTSIsInRhZyI6ImN6RlFhMm1UTkZvVHp3NG9aZDJuSVEiLCJleHAiOjE2Nzk1Nzk1MDIsImFsZyI6IkExMjhHQ01LVyIsIml2IjoiN1hqSVRuejJ6akFtRW90ZSJ9.zXsuF1g_lD3DGWUPPiqkzQ.ytTvZLZeDWMSRcrb.PnM0lu_1_GY5XpLEdl19n8FD-INZ7ezp62kUtSKaWXVLOxeDMvxZrmAvMXZv5S6WaY5XH_LE07aJiyhX70lNc-6iAxeUoZtAX_aqOC-K0tRIitbOW7mIASzVc2mRyzu8vz8GFoN0rLS4m-zFTpNocne_nPqv963oxyYd0sYNX89VJgZqRdppfLvJrJzjYpSn0AT57e5tPAUaboZZCKm3a8vTcPJ7jvekH9WvbDMfKys0jVQRddPDYlvZiktD3rn4tLL0EKzAP6iFUwYP4Bhm5OKSIm2zw6JO7eCZA6R65mCxPeqiwd3piVx_mQWHUpJI0KEv-Lv7lqf0aiJtlZ_MufO3flAbxzsmmkhmIU6Xe8Ai3_rTo4AYyPQ7vQDjrMHaw5c5zzgLm5VCKbiPVHEUwLu-zg5LiH9W5TAj51fX2xm7bpfsdaIZXt1SDQ1meQs9mKnK8Su3M36GYaZiByW5VTZZV5pLZ20ZhBXq5eEsQXsaywVUhORyYX2NBQ26mNldWcFY7Ai3zTlzeayUoaoij9HG154aX_VIoJ1FNsUL9W43wfx8SY0K4XUfwdkp4-cFYfc32-M86-j8VJx5xjmGeH4TmZT3CUKNTCh7Zs2WaLgsNZXfNqD9ZZDBiNi_p17p1qqyGxH52MUCQR--JXtCE_5ySj8dg-d6WBzwksquziFUG8L1W98QGQ_nzAErbyRWiBYkUnDvktxvnvlLhxfyc1uAlkOZQZAWcs1N3zZYlgSqzEg172ZLxWpBW39RsXppwHdQ91Ia5-F_OEpCemDQzYgTBRkIxzUYxkVxFgbsNDiE2OY8rT4GuogW2ysDw_dX-i5CsLDU0Bvjf8_ypHP4BVWFgFh2WAdmnXlGNFh4gYICQmew4h9JyxMEqHUoeYKPjrYYEPeYJHLc0K-rLGRJbuGsPJfTJGSlqU2MbN69xZm-5HEzEcXhcKppm_iOeMfIY5orc_lUorLfne6CQPJpCLSNoH4fsAfxA-uq3yNLAX5xtARY2hDrBzKDl7n2rGotD91ksQfwfJ31nSowhslWhp5zjaI8mViHClJFM0IMjndWrqi1jHGkbLhjGOWr7qi3IHQjlpL4Yuv6ooShPYKQR0mXjX10HLXb63s1SGIGDJL7wQfFGEzBxUIJhCsojl9filQMBh8I68oIQPW37IYqU14gg1XerrfKrmpgha_4IXWi5eE_jA71WuREa0FYS8jjed6jS6IJPXk-WlyjyxMV-_VEtwmXUiQugCTeF9jeU6rTlFbp0dNYyVaXVj9zz4BqhT3hqLyDJBG2ZuAfYEo1dW_cjAfC112_n9Jk5ub1CUUVhwxp9X5E6Xws8b4djkVL8ogDpEdLtu4ld1CbCPiCBsUlX1vHJ6r5HlkUvO6dWZ2W-0PQ_Ts2I-RarEQLsgmKly8i_3vJKe88RN8CQ1I.cKdy4mKLhFQrH5vCA-9wsg</password>
+            <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
         </server>
     </servers>
 
@@ -43,6 +43,10 @@
             </repositories>
         </profile>
     </profiles>
+    <activeProfiles>
+        <activeProfile>erp-system-erp-erp-system-jdi</activeProfile>
+        <activeProfile>erp-system-erp-maven-central-store</activeProfile>
+    </activeProfiles>
 
     <mirrors>
         <mirror>
