@@ -35,24 +35,5 @@
             </repositories>
         </profile>
     </profiles>
-    <activeProfiles>
-        <activeProfile>erp-system-erp-erp-system-jdi</activeProfile>
-    </activeProfiles>
-
-    <mirrors>
-        <mirror>
-            <id>erp-system-erp-maven-central-store</id>
-            <name>erp-system-erp-maven-central-store</name>
-            <url>https://erp-system-erp-034358726843.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/
-            </url>
-            <mirrorOf>*</mirrorOf>
-        </mirror>
-        <mirror>
-            <id>erp-system-erp-erp-system-jdi</id>
-            <name>erp-system-erp-erp-system-jdi</name>
-            <url>https://erp-system-erp-034358726843.d.codeartifact.us-east-1.amazonaws.com/maven/erp-system-jdi/</url>
-            <mirrorOf>*</mirrorOf>
-        </mirror>
-    </mirrors>
 
 </settings>
