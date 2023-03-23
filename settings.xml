@@ -26,14 +26,6 @@
                         https://erp-system-erp-034358726843.d.codeartifact.us-east-1.amazonaws.com/maven/erp-system-jdi/
                     </url>
                 </repository>
-            </repositories>
-        </profile>
-        <profile>
-            <id>erp-system-erp-maven-central-store</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <repositories>
                 <repository>
                     <id>erp-system-erp-maven-central-store</id>
                     <url>
@@ -45,7 +37,6 @@
     </profiles>
     <activeProfiles>
         <activeProfile>erp-system-erp-erp-system-jdi</activeProfile>
-        <activeProfile>erp-system-erp-maven-central-store</activeProfile>
     </activeProfiles>
 
     <mirrors>
