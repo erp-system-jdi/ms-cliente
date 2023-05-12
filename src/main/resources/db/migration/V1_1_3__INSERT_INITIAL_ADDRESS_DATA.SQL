@@ -1,0 +1,2 @@
+INSERT INTO db_01_customer_ms.tb_02_address (id, address, city, neighborhood, `number`, postal_code, state, customer_id) VALUES(0x06DAADDE92504D78A246D433D472A016, 'Avenida Narciso Marquesin', 'Jundiaí', 'Jardim Santa Cruz', '420', '13218710', 'SP', 0xEBEBF7815C8F45CE8898DD517827E464);
+INSERT INTO db_01_customer_ms.tb_02_address (id, address, city, neighborhood, `number`, postal_code, state, customer_id) VALUES(0x878E66771CEF44EB93A31F4D0C6E0165, 'Avenida Narciso Marquesin', 'Jundiaí', 'Jardim Santa Cruz', '420', '13218710', 'SP', 0xC5B91171C637491589CBCFA69A177099);
