@@ -7,7 +7,7 @@ logging:
 
 spring:
   application:
-    name: ms-cliente
+    name: ms-customer
   rabbitmq:
     host: ${RABBITMQ_HOST:localhost}
     username: ${RABBITMQ_USERNAME:guest}
@@ -19,13 +19,14 @@ spring:
     connection-timeout: 1000
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${MYSQL_HOST:jdbc:mysql://localhost:3306/db_01_cliente_ms}
-    username: ${MYSQL_USERNAME:cliente-user}
+    url: ${MYSQL_HOST:jdbc:mysql://localhost:3306/db_01_customer_ms}
+    username: ${MYSQL_USERNAME:customer-user}
     password: ${MYSQL_PASSWORD:password}
   jpa:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+    open-in-view: false
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect

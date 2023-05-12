@@ -4,12 +4,14 @@
         <server>
             <id>erp-system-erp-maven-central-store</id>
             <username>aws</username>
-            <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+            <password>eyJ2ZXIiOjEsImlzdSI6MTY4MzgwODMxNiwiZW5jIjoiQTEyOEdDTSIsInRhZyI6Im1TUlJYMkd5eGRQQk1JQ2JaY0NLdWciLCJleHAiOjE2ODM4NTE1MTYsImFsZyI6IkExMjhHQ01LVyIsIml2IjoiWUZKU3puZEdPYk84ekVCVCJ9.ZktqrFlPcUWBS0nANib81w.Tu-papIT7TDEeR_m.cCi51rbvA0U3jV5rxx9PDPdPiHO7VW2RQm2hV8Tpal7hqyijTP5o56qyi_Zm7gdGrpyc1Jbw24GDwUYpwXOfYkWyLw7UeV0i-v8Yvyz8QStZCAljIuAwiBUlr-x6vveiSoee3ITuyh_r92263ypJitO2v9b6ziooarediyLGCOiRZFxQmdkrFYaX6m7ZVn0hvaXuIJi4sJhFkQe5ToCRvnVd-4eRf0g-YOIyldTf_SEIRNiaTEflm25J8nOyaZ9jxMgz4x4NyF6QYv84rB_b-6Fbb9XEJE0WVtObQ20G4_iN1chB9NBcJDLEywGakD3ycooYyRHMJRwQOnURhhJCLrcCgu8q2_zdMsZg1oY3GqFlsrRVDtdY60TNkwgO06vh-oAk7L40ad6wvuRxWGRNIyZt3R68VHSEX_KWx_5dzEgdfenMzbWwY76TWLkTsO88f1TSKqSw6IR5Ub9a0SZsOEF5MLXjMSmlUC5uf_ijrPRCx2jaQLpMdjVQ9jUWfqfm6pa0Wt0Qj4URD_r5cG2bM6eOqA9nVPvvN6lh9r3w018vmpsDFWYxim3cEyGzY8F2B-Tum9mPgLhGUcgRJYG7zF2EFHOEXHsCpUQmPiR7eYTsaAJZsgvuh6YDFOkI8rg1_5SOh0B8vzQ3N7tOSfO9ufFRxLolBt0CZmJwomr3aAnNnd-c8ESqXdYOhgKoLX5ttYI0sBCHfYSyjfyTslOEdT7woaq1BN1cU909qzdK7Q5ao8lfhUxOEu0VubJTspxe6IEiGt53-yqasdlZy4dZfiCDDr59b4qT01uP1XCKNjBqylICtcIcQqc6x5QD9F3r5CnQ1ZSUHYSHoRQSW4jFwxqfMrtlL2X2ldt3vQ7pPS06bZyGDQ9QGdUudFcc8UeCk6uqm_W3KDwLN5ck_o6xyE8zlfJntF3aSI2lluuzXrMt1K-bmV2LQRJsw_bnpr9fMi08MgqtOLnOaXdILWVMdwGODSncu561MFRb2QHhgww4vsn81UQ6SQZquuz2Ruu9PPEBKZrCgdz6iccskYaLNYKzSnRxgAHgRs_rODrM853WaRhgSwRfzGGxKv0vLCwuYd1kRxVMKM19drDXZgY7krQE9lUXlcIhNrP-QqKtE55C5AYzwKWoC4hu4S0SUHyfYVoUYQ7JivRAtmbw2gTgrSOzxn7f7kCnXCXu3QcDJdpi4sVnjpp5PdJbA9ataJ4pmIMkSs3Jk9gWVPkRp7Em0Q6h5vJACsnmioJvO0UDi0JjUWVOZZ3kqg.HWdLu4un2umbBgyxk9Gp1A&#13;
+</password>
         </server>
         <server>
             <id>erp-system-erp-erp-system-jdi</id>
             <username>aws</username>
-            <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+            <password>eyJ2ZXIiOjEsImlzdSI6MTY4MzgwODUxMCwiZW5jIjoiQTEyOEdDTSIsInRhZyI6Inl0TGhVRlU3emZBRmZrcjZ0cmZPT1EiLCJleHAiOjE2ODM4NTE3MTAsImFsZyI6IkExMjhHQ01LVyIsIml2IjoiUTExSTR1Sm1NSDgwSTE1cCJ9.9JuhM_WOWqGRVpg-qjaiCA.zZWLUDy2AZ89HRl7.VeEd3R0VNBjWnK-_qy0gPXVygV_zYda7HC6DjLA6dz7c9ObSUJO3X9pQ9aNkkX9EjQJCNlLHJQsTDs3YsdsmQg_HHodnbsU5HEojl7nNLuK2SHeZYtwjY2vrAF2RbuXtEP8Jm4PaEzIwLrIxWuRczt-yyYSlUUl_XmKrTSZebHwu38mReAMz9YjusFfhuZjZdMc_RgD-QawBMEaH05Jl4UnoB_i1tU7Ryv8tif26jcNog3pp5tjZ727GOAbToejYotjmDQs6EXQx7pZt90Vp8PLz-qytL-ONbiOCFfSV91lGku-wLeiA37fSOEciSpEfz1MXRl9vwuk6kLcfRMoyRabRwVvxd9fpqXrqACNVOm1YR5vs6iDQuzWmJLvTWGkuq_LGsCuxIIpHULZ3XWzbLA5ZqXeMrpYaIY2dwJGIy2Oly5EArQMAtlhWU75_7-Pb2J-n5xwFP4umUKoP41ez_JbR2TQ3heKRcaHFZEuuY9HS85MZz4-wzK9icWg41-ld0MfJgf9cIroqU-QbTNSeG8_G2KzELM0GNN20sDdxiNGLB-CqUq2X9JAdslpAh_L_CDSE-lTLbFm_bOtUo2P7C6Jq8tHgm47Scyv9xl7iWM3gU_wLPM1MJ8vlcB9IA-7PcjYgTqOvUVM0ZgLYCdIsbc5P7bJ0cpBa67vncTruK14_m8RHt9M135DsSZDmUmlHMfg4cY3Zwj5nwJJUh01N4Zm0ENRReC5rrLyzzcZjO-7vyfChBFyflWNSV0VrtpgkTxgWc4v3FSxwbFBpyO71yiiNM9FW-SD1ObhKsBeioXyaVkk41XXJbN_sbhVusH4OhOxFoGU9xPoHlbNWdHAlE-u9yzJ-7XH1effjrcYWKVmiPopsCHTz3Wk6XbH6zbIldKZUp3doAuxXM0_VZAREcV7rsxi56P8axF1bMGhF6OOZXGYnO0HnK1uxQR1DDylFL4WqBpp4EYrP96jVVoF5QjDw3ruJPvAheOCvsvRQADac0S9UB7oUcvFscOJIEwiI_cqpuVrYcP_CwL43sxPIbjAwBElS2EBzmEt2NsreQ6HvYMYiEWFbTjWWLvaqlnPhzjf1N7mIOehsb8IccNFzZbJlTfgXdfZGJp-2V3pTAO0TGDehJcWWaN333lJJOZdUEppmgz2IAMB82v-18PVYW4MsgdrfK14oO0igKzuBK0yAjvdD8IRhzoCoKEUgvDZMVuivAgdc8I8tqQFfgkLbOxicODqHKfnr5JaiVhtRxrlpMUrJL3Folw.6upvF_rpJBUsDPwIBNkb-w&#13;
+</password>
         </server>
     </servers>
 
@@ -26,6 +28,14 @@
                         https://erp-system-erp-034358726843.d.codeartifact.us-east-1.amazonaws.com/maven/erp-system-jdi/
                     </url>
                 </repository>
+            </repositories>
+        </profile>
+        <profile>
+            <id>erp-system-erp-maven-central-store</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
                 <repository>
                     <id>erp-system-erp-maven-central-store</id>
                     <url>
