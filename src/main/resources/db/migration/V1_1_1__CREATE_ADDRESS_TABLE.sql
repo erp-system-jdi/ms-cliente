@@ -1,4 +1,4 @@
-CREATE TABLE `tb_02_address` (
+CREATE TABLE IF NOT EXISTS `tb_02_address` (
   `id` binary(16) NOT NULL,
   `address` varchar(255) NOT NULL,
   `city` varchar(255) DEFAULT NULL,
