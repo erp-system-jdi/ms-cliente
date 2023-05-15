@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-alpine
+FROM public.ecr.aws/docker/library/eclipse-temurin:17-alpine
 
 COPY *.jar app.jar
 
