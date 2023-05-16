@@ -4,4 +4,4 @@ COPY *.jar app.jar
 
 EXPOSE ${CUSTOMER_PORT}
 
-CMD [ "java", "-jar","-Dspring.profiles.active=${ENV_PIPE}", "/app.jar" ]
+CMD [ "java", "-jar","-Dspring.profiles.active=dev", "/app.jar" ]
