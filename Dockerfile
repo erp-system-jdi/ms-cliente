@@ -1,9 +1,8 @@
-FROM public.ecr.aws/docker/library/eclipse-temurin:17-alpine
+FROM public.ecr.aws/amazoncorretto/amazoncorretto:17
 
-RUN apk --no-cache add curl
+COPY target/*.jar app.jar
 
-COPY *.jar app.jar
+#EXPOSE ${CUSTOMER_PORT}
+EXPOSE 8080
 
-EXPOSE ${CUSTOMER_PORT}
-
-CMD [ "java", "-jar","-Dspring.profiles.active=dev", "/app.jar" ]
+CMD [ "java", "-jar","-Dspring.profiles.active=local", "/app.jar" ]
