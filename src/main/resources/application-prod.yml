@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${MYSQL_HOST:jdbc:mysql://localhost:3306/db_01_customer_ms}
-    username: ${MYSQL_USERNAME:customer-user}
-    password: ${MYSQL_PASSWORD:password}
+    url: ${MYSQL_HOST:jdbc}
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: none
