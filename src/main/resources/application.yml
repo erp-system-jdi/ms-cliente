@@ -5,14 +5,9 @@ logging:
   level:
     br.com.erpsystem: DEBUG
 
-management:
-  endpoint:
-    health:
-      show-details: always
-
 spring:
   flyway:
-    enabled: false
+    enabled: true
     baseline-on-migrate: true
   application:
     name: ms-customer
