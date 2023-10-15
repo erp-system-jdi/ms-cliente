@@ -31,7 +31,7 @@ public class CustomerController {
         return ResponseEntity.ok(registerCostumerResponseDTO);
     }
 
-    @PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<RegisterCostumerResponseDTO> registerCustomer(@Valid @RequestBody RegisterCostumerRequestDTO registerCostumerRequestDTO){
         log.info("CustomerController.registerCustomer - Start - registerCustomerRequestDTO: {}", registerCostumerRequestDTO);
 

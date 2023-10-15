@@ -1,34 +1,27 @@
-server:
-  port: ${CUSTOMER_PORT:8080}
-
-logging:
-  level:
-    br.com.erpsystem: DEBUG
-
 spring:
   flyway:
     enabled: true
     baseline-on-migrate: true
   application:
     name: ms-customer
-#  rabbitmq:
-#    host: ${RABBITMQ_HOST:localhost}
-#    username: ${RABBITMQ_USERNAME:guest}
-#    password: ${RABBITMQ_PASSWORD:guest}
-#    port: ${RABBITMQ_PORT:5672}
-#    listener:
-#      simple:
-#        max-concurrency: 2
-#    connection-timeout: 1000
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+    port: ${RABBITMQ_PORT}
+    listener:
+      simple:
+        max-concurrency: 2
+    connection-timeout: 1000
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${MYSQL_HOST/db_01_customer_ms:jdbc:mysql://localhost:3306/db_01_customer_ms}
-    username: ${MYSQL_USERNAME:customer-user}
-    password: ${MYSQL_PASSWORD:password}
+    url: ${MYSQL_HOST}
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    show-sql: true
+      ddl-auto: none
+    show-sql: false
     open-in-view: false
     properties:
       hibernate:

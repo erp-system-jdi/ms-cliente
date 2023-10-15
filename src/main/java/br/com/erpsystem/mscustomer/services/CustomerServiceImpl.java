@@ -56,14 +56,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     private boolean verifyCustomerExists(String cpf){
-
-        Optional<Customer> customer = customerRepository.findCustomerByCpf(cpf);
-
-        if(customer.isPresent()){
-            return true;
-        } else{
-            return false;
-        }
+        return customerRepository.findCustomerByCpf(cpf).isPresent();
     }
 
     private RegisterCostumerResponseDTO registerCostumerResponseBuilder(CustomerDTO customerDTO){
