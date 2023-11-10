@@ -4,9 +4,10 @@ import br.com.erpsystem.mscustomer.dto.CustomerDTO;
 import br.com.erpsystem.mscustomer.dto.http.request.RegisterCostumerRequestDTO;
 import br.com.erpsystem.mscustomer.dto.http.response.RegisterCostumerResponseDTO;
 import br.com.erpsystem.mscustomer.entity.Customer;
-import br.com.erpsystem.mscustomer.exceptions.BusinessExceptions;
+import br.com.erpsystem.mscustomer.enums.ErrorCodes;
 import br.com.erpsystem.mscustomer.exceptions.CustomerNotFoundException;
 import br.com.erpsystem.mscustomer.exceptions.DuplicatedCpfException;
+import br.com.erpsystem.mscustomer.exceptions.ExceptionResponse;
 import br.com.erpsystem.mscustomer.mapper.CustomerMapper;
 import br.com.erpsystem.mscustomer.repository.CustomerRepository;
 import jakarta.transaction.Transactional;
@@ -15,7 +16,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
+
+import static br.com.erpsystem.mscustomer.constants.BusinessErrorConstants.CUSTOMER_NOT_FOUND;
+import static br.com.erpsystem.mscustomer.constants.BusinessErrorConstants.DUPLICATED_CPF;
 
 @Service
 @Slf4j
@@ -28,14 +31,14 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public RegisterCostumerResponseDTO saveCustomer(RegisterCostumerRequestDTO registerCostumerRequestDTO) {
         if(verifyCustomerExists(registerCostumerRequestDTO.getCustomerDTO().getCpf())){
-            throw new DuplicatedCpfException("This CPF already exists in the database!");
+            throw new DuplicatedCpfException(new ExceptionResponse(ErrorCodes.DUPLICATED_CPF, DUPLICATED_CPF));
         } else {
             log.info("CustomerServiceImpl.saveCustomer - Start - registerCostumerRequestDTO: {}", registerCostumerRequestDTO);
             registerCostumerRequestDTO.getCustomerDTO().setRegisterDate(LocalDateTime.now());
             Customer savedCustomer = customerRepository.save(mapper.customerDtoToCustomer(registerCostumerRequestDTO.getCustomerDTO()));
             log.info("CustomerServiceImpl.saveCustomer - End - customer: {}", savedCustomer);
             return RegisterCostumerResponseDTO.builder()
-                    .costumerDTO(mapper.customerToCustomerDTO(savedCustomer)).build();
+                    .customerDTO(mapper.customerToCustomerDTO(savedCustomer)).build();
 
         }
     }
@@ -43,11 +46,12 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     @Transactional
     public RegisterCostumerResponseDTO findCustomerByCpf(String cpf) {
+        log.info("CustomerServiceImpl.findCustomerByCpf - Start - Cpf: {}", cpf);
 
         CustomerDTO customerDTO = mapper.customerToCustomerDTO((customerRepository.findCustomerByCpf(cpf)
                 .orElseThrow(() -> {
                     log.error("CustomerServiceImpl.findCustomerByCpf - Error - Customer Not Found");
-                    throw new CustomerNotFoundException(BusinessExceptions.CUSTOMER_NOT_FOUND);
+                    throw new CustomerNotFoundException(new ExceptionResponse(ErrorCodes.INVALID_REQUEST, CUSTOMER_NOT_FOUND));
                 })));
 
         log.info("CustomerServiceImpl.findCustomerByCpf - End");
@@ -61,7 +65,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     private RegisterCostumerResponseDTO registerCostumerResponseBuilder(CustomerDTO customerDTO){
         return RegisterCostumerResponseDTO.builder()
-                .costumerDTO(customerDTO)
+                .customerDTO(customerDTO)
                 .build();
     }
 

@@ -36,10 +36,9 @@ public class CustomerController {
         log.info("CustomerController.registerCustomer - Start - registerCustomerRequestDTO: {}", registerCostumerRequestDTO);
 
         RegisterCostumerResponseDTO customerResponseDTO = RegisterCostumerResponseDTO.builder()
-                .costumerDTO(customerService.saveCustomer(registerCostumerRequestDTO).getCostumerDTO()).build();
+                .customerDTO(customerService.saveCustomer(registerCostumerRequestDTO).getCustomerDTO()).build();
 
         log.info("CustomerController.registerCustomer - End");
-
         return ResponseEntity.status(HttpStatus.CREATED).body(customerResponseDTO);
     }
 
