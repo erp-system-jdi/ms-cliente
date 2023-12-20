@@ -1,6 +1,8 @@
 package br.com.erpsystem.mscustomer.controllers;
 
+import br.com.erpsystem.mscustomer.dto.http.request.CustomerUpdateRequestDTO;
 import br.com.erpsystem.mscustomer.dto.http.request.RegisterCostumerRequestDTO;
+import br.com.erpsystem.mscustomer.dto.http.response.CustomerUpdateResponseDTO;
 import br.com.erpsystem.mscustomer.dto.http.response.RegisterCostumerResponseDTO;
 import br.com.erpsystem.mscustomer.services.CustomerService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -15,6 +17,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @Slf4j
@@ -40,6 +44,18 @@ public class CustomerController {
 
         log.info("CustomerController.registerCustomer - End");
         return ResponseEntity.status(HttpStatus.CREATED).body(customerResponseDTO);
+    }
+
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<CustomerUpdateResponseDTO> updateCustomer(@Valid @PathVariable("id") UUID customerId, @RequestBody CustomerUpdateRequestDTO customerUpdateRequestDTO){
+        log.info("CustomerController.updateCustomer - Start - Id: {}", customerId);
+
+
+        CustomerUpdateResponseDTO customerUpdateResponseDTO = CustomerUpdateResponseDTO.builder()
+                .customerDTO(customerService.updateCustomer(customerId, customerUpdateRequestDTO).getCustomerDTO()).build();
+
+        log.info("CustomerController.updateCustomer - End");
+        return ResponseEntity.status(HttpStatus.OK).body(customerUpdateResponseDTO);
     }
 
 }

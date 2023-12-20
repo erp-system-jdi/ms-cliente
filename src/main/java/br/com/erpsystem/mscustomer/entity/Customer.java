@@ -25,21 +25,21 @@ public class Customer {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "full_name")
-    private String fullName;
+//    @Column(name = "full_name")
+//    private String fullName;
     @Column(name = "birthdate")
     private Timestamp birthdate;
     @Column(name = "email")
     private String email;
-    @Column(name = "cpf", unique = true)
+    @Column(name = "cpf", unique = true, updatable = false)
     private String cpf;
-    @Column(name = "rg", nullable = false)
+    @Column(name = "rg", nullable = false, updatable = false)
     private String rg;
     @Column(name = "register_date")
     private Timestamp registerDate;
     @Column(name = "phone")
     private String phone;
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, orphanRemoval = true)
     @JoinColumn(name = "customer_id")
     private List<Address> addresses;
 

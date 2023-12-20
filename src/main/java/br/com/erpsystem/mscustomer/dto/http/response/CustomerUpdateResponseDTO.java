@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RegisterCostumerResponseDTO {
+public class CustomerUpdateResponseDTO {
     @JsonProperty("customer")
     private CustomerDTO customerDTO;
 }
