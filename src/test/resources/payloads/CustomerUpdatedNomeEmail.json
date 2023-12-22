@@ -1,12 +1,12 @@
 {
   "id": "ed4bec3e-dc03-4528-b506-fe9c5eaa5ea1",
-  "first_name": "Mariah",
-  "last_name": "Goldman",
-  "full_name": "Mariah Goldman",
-  "email": "mariah@gmail.com",
+  "firstName": "Mariah",
+  "lastName": "Goldman",
   "birthdate": "1990-09-15",
+  "email": "mariah@gmail.com",
   "cpf": "78945612300",
   "rg": "784561230",
+  "registerDate": "2023-12-19",
   "phone": "11978451236",
   "addresses": [
     {
@@ -14,7 +14,7 @@
       "address": "Av Juscelino Kubistchek",
       "number": "500",
       "neighborhood": "Jardim Brasil",
-      "postal_code": "1320000",
+      "postalCode": "1320000",
       "city": "São Paulo",
       "state": "SP"
     }

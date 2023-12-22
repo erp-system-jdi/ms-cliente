@@ -41,10 +41,12 @@ public class CustomerServiceImpl implements CustomerService {
         if(verifyCustomerExists(registerCostumerRequestDTO.getCustomerDTO().getCpf())){
             throw new DuplicatedCpfException(new ExceptionResponse(ErrorCodes.DUPLICATED_CPF, DUPLICATED_CPF));
         } else {
-            log.info("CustomerServiceImpl.saveCustomer - Start - registerCostumerRequestDTO: {}", registerCostumerRequestDTO);
+            log.info("CustomerServiceImpl.saveCustomer - Start");
+            log.debug("CustomerServiceImpl.saveCustomer - Start - registerCostumerRequestDTO: {}", registerCostumerRequestDTO);
             registerCostumerRequestDTO.getCustomerDTO().setRegisterDate(LocalDateTime.now());
             Customer savedCustomer = customerRepository.save(mapper.customerDtoToCustomer(registerCostumerRequestDTO.getCustomerDTO()));
-            log.info("CustomerServiceImpl.saveCustomer - End - customer: {}", savedCustomer);
+            log.info("CustomerServiceImpl.saveCustomer - End");
+            log.debug("CustomerServiceImpl.saveCustomer - End - customer: {}", savedCustomer);
 
             CustomerDTO customerDTO = mapper.customerToCustomerDTO(savedCustomer);
             customerDTO.setFullName(savedCustomer.getFirstName().concat(" ").concat(savedCustomer.getLastName()));
@@ -78,8 +80,8 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerUpdateResponseDTO updateCustomer(UUID customerId, CustomerUpdateRequestDTO customerUpdateRequestDTO) {
         log.info("CustomerServiceImpl.updateCustomer - Start - Customer Id: {} and CustomerUpdateRequest: {}", customerId, customerUpdateRequestDTO);
 
-        Customer customer = Optional.of(customerRepository.getReferenceById(customerId)).
-                orElseThrow( () -> new CustomerNotFoundException(new ExceptionResponse(ErrorCodes.CUSTOMER_NOT_FOUND, CUSTOMER_NOT_FOUND)));
+        Customer customer = customerRepository.findById(customerId).
+                orElseThrow(() -> new CustomerNotFoundException(new ExceptionResponse(ErrorCodes.CUSTOMER_NOT_FOUND, CUSTOMER_NOT_FOUND)));
 
         log.info("CustomerServiceImpl.updateCustomer - Entidade do banco: {}", customer);
 
@@ -89,11 +91,12 @@ public class CustomerServiceImpl implements CustomerService {
         log.info("CustomerServiceImpl.updateCustomer - Customer Updated: {}", customer);
 
         CustomerDTO customerDTO = mapper.customerToCustomerDTO(customer);
-        customerDTO.setFullName(customer.getFirstName().concat(" ").concat(customer.getLastName()));
 
-//        CustomerUpdateResponseDTO responseDTO = CustomerUpdateResponseDTO.builder()
-//                .customerDTO(customerDTO)
-//                .build();
+        if(customerUpdateRequestDTO.getLastName() == null|| customerUpdateRequestDTO.getLastName().isEmpty()){
+            customerDTO.setFullName(customer.getFirstName().concat(" ").concat(customer.getLastName()));
+        }else {
+            customerDTO.setFullName(customer.getFirstName().concat(" ").concat(customerUpdateRequestDTO.getLastName()));
+        }
 
         return CustomerUpdateResponseDTO.builder().customerDTO(customerDTO).build();
     }

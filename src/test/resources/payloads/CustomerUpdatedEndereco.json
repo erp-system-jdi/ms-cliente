@@ -1,0 +1,22 @@
+{
+  "id": "ed4bec3e-dc03-4528-b506-fe9c5eaa5ea1",
+  "firstName": "Mariah",
+  "lastName": "Carey",
+  "birthdate": "1990-09-15",
+  "email": "careymariah@gmail.com",
+  "cpf": "78945612300",
+  "rg": "784561230",
+  "registerDate": "2023-12-19",
+  "phone": "11999997777",
+  "addresses": [
+    {
+      "id": "9dcd33b2-b206-48e9-8ee8-3ae797dfb28f",
+      "address": "Av Brasil",
+      "number": "789",
+      "neighborhood": "Jardim Farlam",
+      "postalCode": "1300000",
+      "city": "São Paulo",
+      "state": "SP"
+    }
+  ]
+}
