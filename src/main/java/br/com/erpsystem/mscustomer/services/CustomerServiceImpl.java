@@ -10,20 +10,21 @@ import br.com.erpsystem.mscustomer.enums.ErrorCodes;
 import br.com.erpsystem.mscustomer.exceptions.CustomerNotFoundException;
 import br.com.erpsystem.mscustomer.exceptions.DuplicatedCpfException;
 import br.com.erpsystem.mscustomer.exceptions.ExceptionResponse;
+import br.com.erpsystem.mscustomer.exceptions.InvalidUpdateException;
 import br.com.erpsystem.mscustomer.mapper.AddressMapper;
 import br.com.erpsystem.mscustomer.mapper.CustomerMapper;
 import br.com.erpsystem.mscustomer.repository.CustomerRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
-import static br.com.erpsystem.mscustomer.constants.BusinessErrorConstants.CUSTOMER_NOT_FOUND;
-import static br.com.erpsystem.mscustomer.constants.BusinessErrorConstants.DUPLICATED_CPF;
+import static br.com.erpsystem.mscustomer.constants.BusinessErrorConstants.*;
 
 @Service
 @Slf4j
@@ -37,7 +38,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
     @Override
-    public RegisterCostumerResponseDTO saveCustomer(RegisterCostumerRequestDTO registerCostumerRequestDTO) {
+    public RegisterCostumerResponseDTO  saveCustomer(RegisterCostumerRequestDTO registerCostumerRequestDTO) {
         if(verifyCustomerExists(registerCostumerRequestDTO.getCustomerDTO().getCpf())){
             throw new DuplicatedCpfException(new ExceptionResponse(ErrorCodes.DUPLICATED_CPF, DUPLICATED_CPF));
         } else {
@@ -79,6 +80,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Transactional
     public CustomerUpdateResponseDTO updateCustomer(UUID customerId, CustomerUpdateRequestDTO customerUpdateRequestDTO) {
         log.info("CustomerServiceImpl.updateCustomer - Start - Customer Id: {} and CustomerUpdateRequest: {}", customerId, customerUpdateRequestDTO);
+
+        if(customerId == null){
+            log.error("CustomerServiceImpl.updateCustomer - Error - CustomerId is null!");
+            throw new InvalidUpdateException(new ExceptionResponse(ErrorCodes.INVALID_REQUEST, CUSTOMER_ID_NULL));
+        }
+        if(customerUpdateRequestDTO == null){
+            log.error("CustomerServiceImpl.updateCustomer - Error - Campos de atualização vazios!");
+            throw new InvalidUpdateException(new ExceptionResponse(ErrorCodes.INVALID_REQUEST, INVALID_UPDATE));
+        }
 
         Customer customer = customerRepository.findById(customerId).
                 orElseThrow(() -> new CustomerNotFoundException(new ExceptionResponse(ErrorCodes.CUSTOMER_NOT_FOUND, CUSTOMER_NOT_FOUND)));

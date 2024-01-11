@@ -1,0 +1,229 @@
+openapi: 3.0.3
+info:
+  title: MS Customer
+  description: |-
+    Essa Api faz todo o gerenciamento das áreas comerciais da empresa. 
+    
+    _Esse serviço faz parte do ERP Jundicity_
+  version: 1.0.0
+  
+tags:
+  - name: customer
+    description: Operations for customer
+
+paths:
+  /customer/{cpf}:
+    get:
+      tags:
+        - customer
+      summary: Find customers by cpf
+      description: Find customers by cpf
+      operationId: searchCustomerByCpf
+      parameters:
+        - name: cpf
+          in: path
+          description: cpf by customer
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: sucess
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegisterCustomerResponse'
+        '400':
+          description: Invalid CPF
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Customer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+  /customer:
+    post:
+      tags:
+        - customer
+      summary: Create a customer
+      description: Create a customer
+      operationId: registerCustomer
+      requestBody:
+        description: create a new customer
+        content:
+           application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterCustomerRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/RegisterCustomerResponse'
+        '400':
+          description: Duplicated CPF
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+  /customer/{id}:
+    patch:
+      tags: 
+        - customer
+      summary: Update customer
+      description: update customer
+      operationId: updateCustomer
+      parameters:
+        - name: id
+          in: path
+          description: id by customer
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: update customer
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerUpdateRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/CustomerUpdateResponse'
+        '404':
+         description: Customer not found
+         content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+                
+components:
+  schemas:
+    Address:
+      type: object
+      properties:
+        id:
+          type: string
+          example: a355d270-93d0-4be1-a0b5-4a8d178d370f
+        address:
+          type: string
+          example: Av Brasil
+        number:
+          type: string
+          example: 500
+        neighborhood:
+          type: string
+          example: Vale Azul
+        postalCode:
+          type: string
+          example: 1320010
+        city: 
+          type: string
+          example: São Paulo
+        state:
+          type: string
+          example: SP
+          
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+          example: a355d270-93d0-4be1-a0b5-4a8d178d370f
+        firstName:
+          type: string
+          example: João
+        lastName: 
+          type: string
+          example: Silva
+        fullName: 
+          type: string
+          example: João Silva
+        email:
+          type: string
+          example: jsouza@gmail.com
+        birthdate:
+          type: string
+          format: date-time
+        cpf:
+          type: string
+          example: 78965412300
+        rg:
+          type: string
+          example: 7845632100
+        phone:
+          type: string
+          example: 11978541254
+        adresses:
+          $ref: '#/components/schemas/Address'
+        registerDate:
+          type: string
+          format: date-time
+          
+    RegisterCustomerResponse:
+      type: object
+      properties:
+        customer:
+          $ref: '#/components/schemas/Customer'
+          
+    RegisterCustomerRequest:
+      type: object
+      properties:
+        customer:
+          $ref: '#/components/schemas/Customer'
+          
+    
+    CustomerUpdateRequest:
+      type: object
+      properties:
+        customer:
+          $ref: '#/components/schemas/Customer'
+      
+      
+    CustomerUpdateResponse:
+      type: object
+      properties:
+        customer:
+          $ref: '#/components/schemas/Customer'
+          
+    Error:
+      type: object
+      properties: 
+        code:
+          type: string
+        message:
+          type: string
+        details: 
+          type: string
+        
+          
+      
+

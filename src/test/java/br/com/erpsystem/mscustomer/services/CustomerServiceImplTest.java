@@ -8,6 +8,7 @@ import br.com.erpsystem.mscustomer.dto.http.response.RegisterCostumerResponseDTO
 import br.com.erpsystem.mscustomer.entity.Customer;
 import br.com.erpsystem.mscustomer.exceptions.CustomerNotFoundException;
 import br.com.erpsystem.mscustomer.exceptions.DuplicatedCpfException;
+import br.com.erpsystem.mscustomer.exceptions.InvalidUpdateException;
 import br.com.erpsystem.mscustomer.mapper.*;
 import br.com.erpsystem.mscustomer.repository.CustomerRepository;
 import br.com.erpsystem.mscustomer.utils.JsonUtils;
@@ -205,6 +206,30 @@ class CustomerServiceImplTest {
             service.updateCustomer(customerId, request);
         });
     }
+
+    @Test
+    void updatedCustomerRequestNull() throws IOException {
+
+        UUID customerId = UUID.fromString("ed4bec3e-dc03-4528-b506-fe9c5eaa5ea1");
+        CustomerUpdateRequestDTO request = null;
+
+
+        Assertions.assertThrows(InvalidUpdateException.class, () ->{
+            service.updateCustomer(customerId, request);
+        });
+    }
+
+    @Test
+    void updatedCustomerIdNull() throws IOException {
+
+        UUID customerId = null;
+        CustomerUpdateRequestDTO request = JsonUtils.getObjectFromFile(CUSTOMER_UPDATE_REQUEST_ENDERECO, CustomerUpdateRequestDTO.class);
+
+        Assertions.assertThrows(InvalidUpdateException.class, () ->{
+            service.updateCustomer(customerId, request);
+        });
+    }
+
 
 
 
