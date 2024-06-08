@@ -1,6 +1,7 @@
 package br.com.erpsystem.mscustomer.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.JoinColumn;
 import jakarta.validation.constraints.*;
@@ -18,6 +19,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerDTO {
     private UUID id;
     @NotEmpty
@@ -46,7 +48,7 @@ public class CustomerDTO {
     @NotNull
     @JsonProperty("phone")
     private String phone;
-    @JoinColumn(referencedColumnName = "id")
+   // @JoinColumn(referencedColumnName = "id")
     @JsonProperty("address")
     private List<AddressDTO> addresses;
     @JsonIgnore

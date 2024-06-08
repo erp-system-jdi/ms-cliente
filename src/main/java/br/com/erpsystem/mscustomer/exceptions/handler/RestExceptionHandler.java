@@ -47,7 +47,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(CustomerNotFoundException.class)
     public final ResponseEntity<Object> handleCustomerNotFound(CustomerNotFoundException ex) {
         log.error("RestExceptionHandler.handleCustomerNotFound - Customer Not Found - error: [{}]", ex.getMessage(), ex);
-        ExceptionResponse exceptionResponse = new ExceptionResponse(ErrorCodes.CUSTOMER_NOT_FOUND, ex.getMessage());
+        ExceptionResponse exceptionResponse = new ExceptionResponse(ErrorCodes.CUSTOMER_NOT_FOUND, ex.getExceptionResponse().getDetails());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exceptionResponse);
     }
 

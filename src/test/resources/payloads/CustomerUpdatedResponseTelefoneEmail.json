@@ -1,0 +1,24 @@
+{
+  "customer": {
+    "id": "ed4bec3e-dc03-4528-b506-fe9c5eaa5ea1",
+    "first_name": "Mariah",
+    "last_name": "Carey",
+    "full_name": "Mariah Carey",
+    "email": "careymariah@gmail.com",
+    "birthdate": "1990-09-15",
+    "cpf": "78945612300",
+    "rg": "784561230",
+    "phone": "11999997777",
+    "addresses": [
+      {
+        "id": "9dcd33b2-b206-48e9-8ee8-3ae797dfb28f",
+        "address": "Av Juscelino Kubistchek",
+        "number": "500",
+        "neighborhood": "Jardim Brasil",
+        "postal_code": "1320000",
+        "city": "São Paulo",
+        "state": "SP"
+      }
+    ]
+  }
+}

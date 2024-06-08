@@ -1,0 +1,12 @@
+{
+  "addresses": [
+    {
+      "address": "Av Brasil",
+      "number": "789",
+      "neighborhood": "Jardim Farlam",
+      "postal_code": "1300000",
+      "city": "São Paulo",
+      "state": "SP"
+    }
+  ]
+}
