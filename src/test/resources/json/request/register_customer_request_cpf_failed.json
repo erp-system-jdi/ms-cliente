@@ -1,0 +1,22 @@
+{
+  "customer": {
+    "first_name": "Mary",
+    "last_name": "Jane",
+    "full_name": "Mary Jane",
+    "email": "maryjane@gmail.com",
+    "birthdate": "1992-03-30",
+    "cpf": "123456",
+    "rg": "456789123",
+    "phone": "5511989562356",
+    "address": [
+      {
+        "address": "Avenida São Paulo",
+        "number": "156",
+        "neighborhood": "Jardim Flores",
+        "postal_code": "13258796",
+        "city": "Campo Limpo",
+        "state": "SP"
+      }
+    ]
+  }
+}
